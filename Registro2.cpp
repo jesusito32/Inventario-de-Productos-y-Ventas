@@ -132,6 +132,30 @@ void BuscarProducto(){
     }	
 }
 void ActualizarProducto(){
+	    if (num_productos > 0) {
+        string nombreActualizar;
+        cout << "Ingrese el nombre del producto a actualizar: ";
+        getline(cin, nombreActualizar);
+        bool encontrado = false;
+        for (int i = 0; i < num_productos; ++i) {
+            if (almacen[i].nombre == nombreActualizar) {
+                cout << "Producto encontrado. Ingrese los nuevos datos:" << endl;
+                cout << "Nuevo Nombre del Producto: ";
+                getline(cin, almacen[i].nombre);
+                cout << "Nuevo Precio del Producto: ";
+                cin >> almacen[i].precio;
+                encontrado = true;
+                cin.ignore(); 
+                break; 
+            }
+        }
+        if (!encontrado) {
+            cout << "No se encontró el producto con el nombre ingresado." << endl;
+        }
+    } else {
+        cout << "No hay productos registrados." << endl;
+    }
+}
 }
 void EliminarProducto(){
 }
