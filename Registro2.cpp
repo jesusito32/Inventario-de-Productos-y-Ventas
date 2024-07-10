@@ -158,6 +158,29 @@ void ActualizarProducto(){
 }
 }
 void EliminarProducto(){
+    if (num_productos > 0) {
+        string nombreEliminar;
+        cout << "Ingrese el nombre del producto a eliminar: ";
+        getline(cin, nombreEliminar);
+        bool encontrado = false;
+        for (int i = 0; i < num_productos; ++i) {
+            if (almacen[i].nombre == nombreEliminar) {
+                for (int j = i; j < num_productos - 1; ++j) {
+                    almacen[j] = almacen[j + 1];
+                }
+                num_productos--;
+                encontrado = true;
+                cout << "Producto eliminado correctamente." << endl;
+                break;
+            }
+        }
+        if (!encontrado) {
+            cout << "No se encontró el producto con el nombre ingresado." << endl;
+        }
+    } else {
+        cout << "No hay productos registrados." << endl;
+    }
+		
 }
 void RegVenta(){
 }
