@@ -210,6 +210,19 @@ void RegVenta(){
 
 }
 void ListVent(){
+    if (num_ventas > 0) {
+        cout << "Listado de Ventas:" << endl;
+        cout << "-----------------" << endl;
+        for (int i = 0; i < num_ventas; ++i) {
+            cout << "ID de Venta: " << ventas[i].idVenta << endl;
+            cout << "Producto: " << ventas[i].producto << endl;
+            cout << "Cantidad: " << ventas[i].cantidad << endl;
+            cout << "Precio Total: " << ventas[i].precioTotal << endl;
+            cout << "-----------------" << endl;
+        }
+    } else {
+        cout << "No hay ventas registradas." << endl;
+    }	
 }
 void CalcularVentas(){
 }
