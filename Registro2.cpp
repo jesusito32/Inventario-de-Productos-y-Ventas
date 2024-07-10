@@ -225,4 +225,13 @@ void ListVent(){
     }	
 }
 void CalcularVentas(){
+    if (num_ventas > 0) {
+        float totalVentas = 0.0;
+        for (int i = 0; i < num_ventas; ++i) {
+            totalVentas += ventas[i].precioTotal;
+        }
+        cout << "El total de ventas realizadas es: " << totalVentas << endl;
+    } else {
+        cout << "No hay ventas registradas." << endl;
+    }
 }
