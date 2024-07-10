@@ -183,6 +183,31 @@ void EliminarProducto(){
 		
 }
 void RegVenta(){
+    if (num_productos > 0) {
+        if (num_ventas < Ventas) {
+            cout << "Registrando venta" << endl;
+            cout << "..................." << endl;
+            cout << "Escribe los siguientes datos: " << endl;
+            ventas[num_ventas].idVenta = num_ventas + 1;
+            cout << "Nombre del Producto vendido: ";
+            getline(cin, ventas[num_ventas].producto);
+            cout << "Cantidad vendida: ";
+            cin >> ventas[num_ventas].cantidad;
+            for (int i = 0; i < num_productos; ++i) {
+                if (almacen[i].nombre == ventas[num_ventas].producto) {
+                    ventas[num_ventas].precioTotal = almacen[i].precio * ventas[num_ventas].cantidad;
+                    break;
+                }
+            }
+            num_ventas++;
+        } else {
+            cout << "No se pueden registrar más ventas. Límite alcanzado (1000)." << endl;
+        }
+        cin.ignore();
+    } else {
+        cout << "No hay productos registrados para realizar ventas." << endl;
+    }
+
 }
 void ListVent(){
 }
