@@ -100,8 +100,18 @@ void RegProducto(){
 }
 
 void ListProducto(){
+    if (num_productos > 0) {
+        cout << "Listado de Productos:" << endl;
+        cout << "--------------------" << endl;
+        for (int i = 0; i < num_productos; ++i) {
+            cout << "Nombre: " << almacen[i].nombre << ", Precio: " << almacen[i].precio << endl;
+        }
+    } else {
+        cout << "No hay productos registrados." << endl;
+    }
 }
 void BuscarProducto(){
+	
 }
 void ActualizarProducto(){
 }
