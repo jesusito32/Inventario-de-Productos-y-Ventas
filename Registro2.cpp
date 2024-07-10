@@ -111,7 +111,25 @@ void ListProducto(){
     }
 }
 void BuscarProducto(){
-	
+    if (num_productos > 0) {
+        string nombreBusqueda;
+        cout << "Ingrese el nombre del producto a buscar: ";
+        getline(cin, nombreBusqueda);
+        bool encontrado = false;
+        for (int i = 0; i < num_productos; ++i) {
+            if (almacen[i].nombre == nombreBusqueda) {
+                cout << "Producto encontrado:" << endl;
+                cout << "Nombre: " << almacen[i].nombre << ", Precio: " << almacen[i].precio << endl;
+                encontrado = true;
+                break; 
+            }
+        }
+        if (!encontrado) {
+            cout << "No se encontró el producto con el nombre ingresado." << endl;
+        }
+    } else {
+        cout << "No hay productos registrados." << endl;
+    }	
 }
 void ActualizarProducto(){
 }
